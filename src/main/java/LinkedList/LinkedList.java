@@ -97,25 +97,27 @@ public class LinkedList {
     }
 
     //deleteLast
-    public void deleteLast() {
-        var currNode = first;
+    public void deleteLast() throws IllegalAccessException {
+        var currNode = first.next;
+        var prev = first;
 
-        if (first==null){
-            return;
-        }
-        else {
+        if (currNode == null) {
+            first=last=null;
+        } else if (first == null) {
+            throw new IllegalAccessException("list is empty");
+        } else {
             while (currNode != null) {
-                if (currNode.next == null ) {
-                    last = currNode     ;
-                    currNode=currNode.next;
+                if (currNode.next != null) {
+                    prev = currNode;
                 }
-                else {
-                    currNode= currNode.next;
-                }
+                currNode =currNode.next;
 
             }
-        }
+            currNode=prev;
+            last=currNode;
+            last.next=null;
 
+        }
 
 
     }

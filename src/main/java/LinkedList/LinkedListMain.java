@@ -22,6 +22,14 @@ public class LinkedListMain {
         list.printList(list);
         list.reverse();
         list.printList(list);
+        list.deleteLast();
+        list.deleteLast();
+        list.deleteLast();
+        list.deleteLast();
+        list.deleteLast();
+        list.deleteLast();
+        list.printList(list);
+
 
 
     }
